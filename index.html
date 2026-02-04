@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Struktur Organisasi PLN UID Kalselteng</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{margin:0;font-family:Arial;background:#f2f5f9;overflow:hidden}
+
+/* SIDEBAR */
+.sidebar{
+  width:260px;height:100vh;position:fixed;left:0;top:0;
+  background:#0b4d5d;color:#fff;padding:20px
+}
+.sidebar a{
+  display:block;color:#fff;text-decoration:none;
+  padding:10px;border-radius:6px;margin-bottom:6px;cursor:pointer
+}
+.sidebar a:hover{background:#0f6b80}
+
+/* HEADER */
+.header{
+  margin-left:260px;background:#0b4d5d;
+  color:#fff;padding:15px 25px
+}
+
+/* CONTENT */
+.content{
+  margin-left:260px;padding:25px;
+  height:calc(100vh - 60px);overflow:auto
+}
+
+/* TREE */
+.tree{width:max-content;min-width:100%;padding-bottom:140px}
+.tree ul{
+  padding-top:20px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  position:relative
+}
+.tree li{
+  list-style:none;
+  position:relative;
+  padding:20px 10px 0 10px;
+  text-align:center
+}
+.tree li::before,.tree li::after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:50%;
+  border-top:2px solid #555;
+  width:50%;
+  height:20px
+}
+.tree li::after{
+  right:auto;
+  left:50%;
+  border-left:2px solid #555
+}
+.tree li:only-child::before,
+.tree li:only-child::after{display:none}
+.tree ul ul::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:50%;
+  border-left:2px solid #555;
+  height:20px
+}
+
+/* NODE */
+.node{
+  background:#fff;
+  border:1px solid #000;
+  padding:10px;
+  min-width:240px;
+  font-size:12px;
+  line-height:1.3;
+  font-weight:600
+}
+.hidden{display:none}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar text-center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_PLN.png"
+       alt="Logo PLN"
+       style="width:80px;margin-bottom:10px;">
+  <h5>PT PLN (Persero)</h5>
+  <small>UID Kalselteng</small>
+  <hr>
+  <a onclick="showBagan()">A. Bagan Organisasi</a>
+  <a onclick="showStruktur()">B. Struktur Jabatan</a>
+</div>
+
+<div class="header">Dashboard Internal PLN</div>
+
+<div class="content">
+
+<!-- ================= A. BAGAN ORGANISASI ================= -->
+<div id="baganView">
+<h5>A. Bagan Organisasi</h5>
+
+<div class="tree">
+<ul>
+<li>
+
+<div class="node">
+UNIT INDUK DISTRIBUSI<br>
+KALIMANTAN SELATAN DAN KALIMANTAN TENGAH
+</div>
+
+<ul>
+  
+<!-- ================= BIDANG PERENCANAAN ================= -->
+<li>
+  <div class="node">Bidang Perencanaan</div>
+  <ul>
+    <li>
+      <div class="node">Sub Bidang Perencanaan Pengusahaan</div>
+    </li>
+    <li>
+      <div class="node">Sub Bidang Perencanaan Sistem Kelistrikan</div>
+    </li>
+  </ul>
+</li>
+
+<!-- ================= BIDANG DISTRIBUSI ================= -->
+<li>
+<div class="node">Bidang Distribusi</div>
+<ul>
+
+<li>
+<div class="node">Sub Bidang Efisiensi, Pengukuran dan Mutu Sistem Distribusi</div>
+<ul>
+<li><div class="node">Bagian Penertiban Pemakaian Tenaga Listrik</div></li>
+<li><div class="node">Bagian Pengendalian Sistem Meter</div></li>
+</ul>
+</li>
+
+<li>
+<div class="node">Sub Bidang Perencanaan Sistem Distribusi</div>
+<ul>
+<li><div class="node">Bagian Pengelolaan Konstruksi dan Logistik</div></li>
+<li><div class="node">Bagian Pengelolaan Aset Distribusi</div></li>
+</ul>
+</li>
+
+<li>
+<div class="node">Sub Bidang Operasi dan Pemeliharaan Sistem Distribusi</div>
+<ul>
+<li><div class="node">Bagian PDKB</div></li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+<!-- ================= NIAGA ================= -->
+<li>
+<div class="node">Bidang Niaga dan Manajemen Pelanggan</div>
+<ul>
+
+<li>
+<div class="node">Sub Bidang Pelayanan Pelanggan</div>
+<ul>
+<li><div class="node">Bagian Administrasi Pelanggan</div></li>
+<li><div class="node">Bagian Digital Service dan Customer Experience</div></li>
+</ul>
+</li>
+
+<li>
+<div class="node">Sub Bidang Pengamanan Pendapatan</div>
+<ul>
+<li><div class="node">Bagian Manajemen Billing</div></li>
+<li><div class="node">Bagian Pengendalian Piutang</div></li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+<!-- ================= UNIT PELAKSANA ================= -->
+<li>
+<div class="node">Unit Pelaksana</div>
+</li>
+
+<!-- ================= KEUANGAN ================= -->
+<li>
+<div class="node">Bidang Keuangan, Komunikasi, dan Umum</div>
+<ul>
+
+<li>
+<div class="node">Sub Bidang Komunikasi dan TJSL</div>
+<ul>
+<li><div class="node">Bagian Komunikasi dan Manajemen Stakeholder</div></li>
+<li><div class="node">Bagian TJSL</div></li>
+</ul>
+</li>
+
+<li>
+<div class="node">Sub Bidang Aset Properti dan Umum</div>
+<ul>
+<li><div class="node">Bagian Aset Properti</div></li>
+<li><div class="node">Bagian Umum</div></li>
+</ul>
+</li>
+
+<li>
+<div class="node">Sub Bidang Akuntansi</div>
+<ul>
+<li><div class="node">Bagian Akuntansi Umum dan Biaya</div></li>
+<li><div class="node">Bagian Akuntansi AT dan PDP</div></li>
+<li><div class="node">Bagian Pajak dan Asuransi</div></li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+<!-- ======== TAMBAHAN LEVEL 2 (KANAN) ======== -->
+<li>
+<div class="node">Sub Bidang Perencanaan Pengadaan</div>
+</li>
+
+<li>
+<div class="node">Sub Bidang Pelaksana Pengadaan</div>
+</li>
+
+<li>
+<div class="node">Sub Bidang Keselamatan, Kesehatan Kerja, Lingkungan dan Keamanan</div>
+<ul>
+<li><div class="node">Bagian Keselamatan, Kesehatan Kerja dan Keamanan</div></li>
+<li><div class="node">Bagian Lingkungan</div></li>
+</ul>
+</li>
+
+<li>
+<div class="node">Bagian Manajemen Risiko dan Kepatuhan</div>
+</li>
+
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<!-- ================= B. STRUKTUR JABATAN ================= -->
+<div id="strukturView" class="hidden">
+<h5>B. Struktur Jabatan</h5>
+
+<div class="tree">
+<ul>
+<li>
+
+<div class="node">
+GENERAL MANAGER<br>
+UNIT INDUK DISTRIBUSI<br>
+KALIMANTAN SELATAN DAN KALIMANTAN TENGAH
+</div>
+
+<ul>
+<li>
+
+<div class="node">
+Senior Specialist Performance<br>
+Assistant to General Manager
+</div>
+
+<ul>
+
+<!-- ================= SENIOR MANAGER PERENCANAAN ================= -->
+<li>
+<div class="node">Senior Manager Perencanaan</div>
+<ul>
+<li><div class="node">Senior Specialist Kinerja Perencanaan</div></li>
+<li><div class="node">Specialist Kinerja Perencanaan</div></li>
+<li>
+  <div class="node">Manager Perencanaan Pengusahaan</div>
+  <ul>
+    <li><div class="node">Specialist Perencanaan Pengusahaan dan Kinerja</div></li>
+    <li><div class="node">Senior Officer Perencanaan Pengusahaan dan Kinerja</div></li>
+    <li><div class="node">Officer Perencanaan Pengusahaan dan Kinerja</div></li>
+
+    <li><div class="node">Specialist Pengelolaan ESG dan Safeguard</div></li>
+    <li><div class="node">Senior Officer Pengelolaan ESG dan Safeguard</div></li>
+    <li><div class="node">Officer Pengelolaan ESG dan Safeguard</div></li>
+
+    <li><div class="node">Specialist Sistem Manajemen Terintegrasi</div></li>
+    <li><div class="node">Senior Officer Sistem Manajemen Terintegrasi</div></li>
+    <li><div class="node">Officer Sistem Manajemen Terintegrasi</div></li>
+  </ul>
+</li>
+
+<li>
+  <div class="node">Manager Perencanaan Sistem Kelistrikan</div>
+  <ul>
+    <li><div class="node">Specialist Perencanaan Sistem Kelistrikan</div></li>
+    <li><div class="node">Senior Officer Perencanaan Sistem Kelistrikan</div></li>
+    <li><div class="node">Officer Perencanaan Sistem Kelistrikan</div></li>
+  </ul>
+</li>
+
+</ul>
+</li>
+
+<!-- ================= SENIOR MANAGER DISTRIBUSI ================= -->
+<li>
+<div class="node">Senior Manager Distribusi</div>
+<ul>
+<li><div class="node">Senior Specialist Kinerja Distribusi</div></li>
+<li><div class="node">Specialist Kinerja Distribusi</div></li>
+<li>
+  <div class="node">Manager Efisiensi Pengukuran dan Mutu Sistem Distribusi</div>
+  <ul>
+    <li><div class="node">Specialist Efisiensi Pengukuran dan Mutu Sistem Distribusi</div></li>
+    <li><div class="node">Officer Efisiensi Pengukuran dan Mutu Sistem Distribusi</div></li>
+  </ul>
+</li>
+<li>
+  <div class="node">Manager Perencanaan Sistem Distribusi</div>
+  <ul>
+    <li><div class="node">Specialist Perencanaan Sistem Distribusi</div></li>
+    <li><div class="node">Senior Officer Perencanaan Sistem Distribusi</div></li>
+  </ul>
+</li>
+
+<li>
+  <div class="node">Manager Operasi dan Pemeliharaan Sistem Distribusi</div>
+  <ul>
+    <li><div class="node">Specialist Operasi dan Pemeliharaan Sistem Distribusi</div></li>
+    <li><div class="node">Senior Officer Operasi dan Pemeliharaan Sistem Distribusi</div></li>
+    <li><div class="node">Officer Operasi dan Pemeliharaan Sistem Distribusi</div></li>
+  </ul>
+</li>
+</ul>
+</li>
+
+<!-- ================= SENIOR MANAGER NIAGA ================= -->
+<li>
+<div class="node">Senior Manager Niaga dan Manajemen Pelanggan</div>
+<ul>
+<li><div class="node">Senior Specialist Kinerja Niaga dan Manajemen Pelanggan</div></li>
+<li><div class="node">Specialist Kinerja Niaga dan Manajemen Pelanggan</div></li>
+<li>
+<div class="node">Manager Strategi Pemasaran</div>
+<ul>
+<li><div class="node">Specialist Strategi Pemasaran</div></li>
+<li><div class="node">Senior Officer Strategi Pemasaran</div></li>
+<li><div class="node">Officer Strategi Pemasaran</div></li>
+</ul>
+</li>
+
+<li>
+<div class="node">Manager / Assistant Layanan Prioritas PAE</div>
+<ul>
+<li><div class="node">Specialist Priority Account Executive *</div></li>
+<li><div class="node">Senior Officer Priority Account Executive *</div></li>
+<li><div class="node">Officer Priority Account Executive *</div></li>
+</ul>
+</li>
+<li>
+  <div class="node">Manager Pelayanan Pelanggan</div>
+  <ul>
+    <li><div class="node">Specialist Pelayanan Pelanggan</div></li>
+    <li><div class="node">Senior Officer Pelayanan Pelanggan</div></li>
+  </ul>
+</li>
+
+<li>
+  <div class="node">Manager Pengamanan Pendapatan</div>
+  <ul>
+    <li><div class="node">Specialist Pengamanan Pendapatan</div></li>
+    <li><div class="node">Senior Officer Pengamanan Pendapatan</div></li>
+  </ul>
+</li>
+
+</ul>
+</li>
+
+<!-- ================= UNIT PELAKSANA ================= -->
+<li>
+<div class="node">Unit Pelaksana</div>
+</li>
+
+<!-- ================= SENIOR MANAGER KEUANGAN ================= -->
+<li>
+<div class="node">Senior Manager Keuangan, Komunikasi, dan Umum</div>
+<ul>
+<li><div class="node">Senior Specialist Kinerja Keuangan, Komunikasi, dan Umum</div></li>
+<li><div class="node">Specialist Kinerja Keuangan, Komunikasi, dan Umum</div></li>
+<li><div class="node">Manager Komunikasi dan TJSL</div></li>
+<li><div class="node">Manager Aset Properti dan Umum</div></li>
+<li>
+  <div class="node">Manager Keuangan dan Anggaran</div>
+  <ul>
+    <li><div class="node">Specialist Keuangan dan Anggaran</div></li>
+    <li><div class="node">Senior Officer Keuangan dan Anggaran</div></li>
+    <li><div class="node">Officer Keuangan dan Anggaran</div></li>
+  </ul>
+</li>
+<li>
+  <div class="node">Manager Akuntansi</div>
+  <ul>
+    <li><div class="node">Specialist Akuntansi</div></li>
+    <li><div class="node">Senior Officer Akuntansi</div></li>
+  </ul>
+</li>
+
+<!-- ================= SISANYA TETAP ================= -->
+<li>
+<div class="node">Manager Perencana Pengadaan</div>
+<ul>
+<li><div class="node">Specialist Perencana Pengadaan</div></li>
+<li><div class="node">Senior Officer Perencana Pengadaan</div></li>
+<li><div class="node">Officer Perencana Pengadaan</div></li>
+</ul>
+</li>
+
+<li>
+<div class="node">Manager Pelaksana Pengadaan</div>
+<ul>
+<li><div class="node">Specialist Pelaksana Pengadaan</div></li>
+<li><div class="node">Senior Officer Pelaksana Pengadaan</div></li>
+<li><div class="node">Officer Pelaksana Pengadaan</div></li>
+</ul>
+</li>
+
+<li>
+<div class="node">Manager Keselamatan, Kesehatan Kerja, Lingkungan dan Keamanan</div>
+<ul>
+<li><div class="node">Specialist K3LK</div></li>
+<li><div class="node">Senior Officer K3LK</div></li>
+</ul>
+</li>
+
+<li>
+<div class="node">Assistant Manager Manajemen Risiko dan Kepatuhan</div>
+<ul>
+<li><div class="node">Senior Officer Manajemen Risiko dan Kepatuhan</div></li>
+<li><div class="node">Officer Manajemen Risiko dan Kepatuhan</div></li>
+</ul>
+</li>
+
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<script>
+function showBagan(){
+  document.getElementById('baganView').classList.remove('hidden');
+  document.getElementById('strukturView').classList.add('hidden');
+}
+function showStruktur(){
+  document.getElementById('strukturView').classList.remove('hidden');
+  document.getElementById('baganView').classList.add('hidden');
+}
+</script>
+<script>
+function showBagan(){
+  document.getElementById('baganView').classList.remove('hidden');
+  document.getElementById('strukturView').classList.add('hidden');
+}
+function showStruktur(){
+  document.getElementById('strukturView').classList.remove('hidden');
+  document.getElementById('baganView').classList.add('hidden');
+}
+</script>
+
+<!-- ===== SCRIPT AMBIL NAMA & MASA JABATAN DARI CSV ===== -->
+<script>
+async function loadJabatanData() {
+  const response = await fetch('DATA JABATAN UID KALSELTENG (2).csv');
+  const text = await response.text();
+
+  const rows = text.split('\n').map(r => r.split(';'));
+  const headers = rows.shift();
+
+  const idxNama = headers.indexOf('Personnel Number');
+  const idxPosisi = headers.indexOf('Nama Panjang Posisi');
+  const idxMasa = headers.indexOf('Masa Jabatan (Tahun)');
+
+  const data = rows.map(r => ({
+    nama: (r[idxNama] || '').trim(),
+    posisi: (r[idxPosisi] || '').trim().toUpperCase(),
+    masa: (r[idxMasa] || '').trim()
+  }));
+
+  document.querySelectorAll('#strukturView .node').forEach(node => {
+    const jabatanNode = node.childNodes[0].textContent.trim().toUpperCase();
+
+    const match = data.find(d =>
+      jabatanNode.includes(d.posisi) || d.posisi.includes(jabatanNode)
+    );
+
+    if (match) {
+      const info = document.createElement('div');
+      info.style.marginTop = '6px';
+      info.style.paddingTop = '6px';
+      info.style.borderTop = '1px dashed #999';
+      info.style.fontSize = '10px';
+      info.style.fontWeight = '400';
+      info.innerHTML = `
+        Nama : ${match.nama}<br>
+        Masa Jabatan : ${match.masa} Tahun
+      `;
+      node.appendChild(info);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', loadJabatanData);
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
